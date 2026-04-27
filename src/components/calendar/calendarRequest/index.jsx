@@ -82,7 +82,7 @@ const CalendarRequest = () => {
                                     <S.Text $weight={"700"} onClick={() => navigate(`/users/${request.userId}`)} style={{cursor: "pointer"}}>{request.userNickname}</S.Text>
                                     <S.Text $size={"11px"} $color={"#666666ff"}>{formatDate(request.createdAt, 5)}</S.Text>
                                 </S.HorizontalWrapper>
-                                {(user.role === "MANAGER" || user.role === "ADMIN") && <S.IconArea title="요청 확인함" src={unchecked} style={{cursor: "pointer", width: "13px", height: "13px"}} onClick={() => handleRequestProcess(request.calendarRequestId)} />}
+                                {(user?.role === "MANAGER" || user?.role === "ADMIN") && <S.IconArea title="요청 확인함" src={unchecked} style={{cursor: "pointer", width: "13px", height: "13px"}} onClick={() => handleRequestProcess(request.calendarRequestId)} />}
                             </S.HorizontalWrapper>
                             <S.RequestTextBox style={{whiteSpace: "pre-line"}}>{request.content}</S.RequestTextBox>
                         </S.ContentBox>
