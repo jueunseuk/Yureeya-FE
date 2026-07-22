@@ -8,6 +8,7 @@ import { RANKINGS } from "@/constants/rankings";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "@/util/dateFormatter";
+import default_profile from "@/assets/image/default_profile.jpg";
 
 const RankingComponent = () => {
     const navigate = useNavigate();
@@ -83,7 +84,7 @@ const RankingComponent = () => {
                         <BC.VerticalWrapper $jc={"flex-end"} $gap={"15px"} style={{padding: "15px", height: "100%"}}>
                             <BC.Icon src={second} $w={"45px"} style={{position: "absolute", top: "-2px"}}/>
                             <BC.VerticalWrapper $gap={"5px"}>
-                                <S.ProfileImage src={rankData[1]?.profileUrl} $w={"100px"} $h={"100px"} $c={"#8A8A8A"} onClick={() => handleNavigateUser(rankData[1].userId)} />
+                                <S.ProfileImage src={rankData[1]?.profileUrl ? rankData[1].profileUrl : default_profile} $w={"100px"} $h={"100px"} $c={"#8A8A8A"} onClick={() => handleNavigateUser(rankData[1].userId)} />
                                 <BC.Text $size={"14px"} style={{cursor: "pointer"}} onClick={() => handleNavigateUser(rankData[1].userId)}>{rankData[1]?.nickname}</BC.Text>
                             </BC.VerticalWrapper>
                             <BC.Text $size={"18px"} $weight={"600"}>{rankData[1].score}회</BC.Text>
@@ -97,7 +98,7 @@ const RankingComponent = () => {
                         <BC.VerticalWrapper $jc={"flex-end"} $gap={"15px"} style={{padding: "15px", height: "100%"}}>
                             <BC.Icon src={first} $w={"50px"} style={{position: "absolute", top: "-25px"}}/>
                             <BC.VerticalWrapper $gap={"5px"}>
-                                <S.ProfileImage src={rankData[0]?.profileUrl} $w={"100px"} $h={"100px"} $c={"#AC9306"} onClick={() => handleNavigateUser(rankData[0].userId)} />
+                                <S.ProfileImage src={rankData[0]?.profileUrl ? rankData[0].profileUrl : default_profile} $w={"100px"} $h={"100px"} $c={"#AC9306"} onClick={() => handleNavigateUser(rankData[0].userId)} />
                                 <BC.Text $size={"14px"} style={{cursor: "pointer"}} onClick={() => handleNavigateUser(rankData[0].userId)}>{rankData[0]?.nickname}</BC.Text>
                             </BC.VerticalWrapper>
                             <BC.Text $size={"18px"} $weight={"600"}>{rankData[0].score}회</BC.Text>
@@ -111,7 +112,7 @@ const RankingComponent = () => {
                         <BC.VerticalWrapper $jc={"flex-end"} $gap={"15px"} style={{padding: "15px", height: "100%"}}>
                             <BC.Icon src={third} $w={"40px"} style={{position: "absolute", top: "20px"}}/>
                             <BC.VerticalWrapper $gap={"5px"}>
-                                <S.ProfileImage src={rankData[2]?.profileUrl} $w={"100px"} $h={"100px"} $c={"#995B1D"} onClick={() => handleNavigateUser(rankData[2].userId)} />
+                                <S.ProfileImage src={rankData[2]?.profileUrl ? rankData[2].profileUrl : default_profile} $w={"100px"} $h={"100px"} $c={"#995B1D"} onClick={() => handleNavigateUser(rankData[2].userId)} />
                                 <BC.Text $size={"14px"} style={{cursor: "pointer"}} onClick={() => handleNavigateUser(rankData[2].userId)}>{rankData[2]?.nickname}</BC.Text>
                             </BC.VerticalWrapper>
                             <BC.Text $size={"18px"} $weight={"600"}>{rankData[2].score}회</BC.Text>
@@ -125,7 +126,7 @@ const RankingComponent = () => {
                         <S.RestRankItem key={rank.rankingId}>
                             <BC.HorizontalWrapper $gap={"15px"}>
                                 <BC.Text $size={"18px"} $weight={"600"}>{rank.priority}등</BC.Text>
-                                <S.ProfileImage src={rank.profileUrl} $w={"30px"} $h={"30px"} onClick={() => handleNavigateUser(rank.userId)}/>
+                                <S.ProfileImage src={rank.profileUrl ? rank.profileUrl : default_profile} $w={"30px"} $h={"30px"} onClick={() => handleNavigateUser(rank.userId)}/>
                                 <BC.Text $size={"14px"} onClick={() => handleNavigateUser(rank.userId)}>{rank.nickname}</BC.Text>
                             </BC.HorizontalWrapper>
                             <BC.DotLine />
