@@ -4,7 +4,7 @@
 <div align="center">
 
 
-# CYR PROJECT
+# Yureeya - FE
 
 <em>Empowering Innovation, Elevating User Experiences Daily</em>
 
