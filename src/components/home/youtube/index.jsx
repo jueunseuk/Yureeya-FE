@@ -33,7 +33,7 @@ const YoutubeComponent = () => {
         <S.Wrapper>
             <S.TitleArea>
                 <BC.Text $size={"16px"} $weight={"600"}>NEW YULTUBE</BC.Text>
-                <BC.Icon src={information} title="갤러리에 업로드 된 사진 중 12장을 랜덤으로 보여줍니다."/>
+                <BC.Icon src={information} title="공식 유튜브 채널에서 가장 최신 영상을 가져옵니다."/>
             </S.TitleArea>
             <BC.HorizontalWrapper>
                 {videoId && (
