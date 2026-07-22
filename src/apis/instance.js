@@ -49,7 +49,7 @@ instance.interceptors.response.use(
         processQueue(refreshError, null);
         localStorage.removeItem("userInfo");
         if(refreshError.response.data.code === "AUTH_004") {
-          console.log("리프레시 토큰이 존재하지 않습니다.");
+          console.log("Unable to renew");
         }
         return Promise.reject(refreshError);
       }
