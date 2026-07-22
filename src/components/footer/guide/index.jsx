@@ -252,7 +252,7 @@ const Guide = () => {
                             <S.Row>
                                 <S.Column rowSpan={9}>게시글 작성</S.Column>
                                 <S.Column>자유게시판</S.Column>
-                                <S.Column>+2</S.Column>
+                                <S.Column>+1</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
                             <S.Row>
@@ -262,42 +262,42 @@ const Guide = () => {
                             </S.Row>
                             <S.Row>
                                 <S.Column>내가 그린 유리</S.Column>
-                                <S.Column>+5</S.Column>
+                                <S.Column>+2</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
                             <S.Row>
                                 <S.Column>내가 부른 유리</S.Column>
-                                <S.Column>+7</S.Column>
+                                <S.Column>+3</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
                             <S.Row>
                                 <S.Column>To. 유리</S.Column>
-                                <S.Column>+3</S.Column>
+                                <S.Column>+1</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
                             <S.Row>
                                 <S.Column>내가 좋아하는 유리 노래</S.Column>
-                                <S.Column>+2</S.Column>
+                                <S.Column>+1</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
                             <S.Row>
                                 <S.Column>미발매곡 가사 탐구</S.Column>
-                                <S.Column>+3</S.Column>
+                                <S.Column>+1</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
                             <S.Row>
                                 <S.Column>콘서트 후기</S.Column>
-                                <S.Column>+2</S.Column>
+                                <S.Column>+1</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
                             <S.Row>
                                 <S.Column>굿즈 후기</S.Column>
-                                <S.Column>+2</S.Column>
+                                <S.Column>+1</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
                             <S.Row>
                                 <S.Column colSpan={2}>댓글</S.Column>
-                                <S.Column>+1</S.Column>
+                                <S.Column>0</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
                             <S.Row>
@@ -312,7 +312,7 @@ const Guide = () => {
                             </S.Row>
                             <S.Row>
                                 <S.Column colSpan={2}>투표 참여</S.Column>
-                                <S.Column>+3</S.Column>
+                                <S.Column>+2</S.Column>
                                 <S.Column>투표당 한 번</S.Column>
                             </S.Row>
                             <S.Row>
