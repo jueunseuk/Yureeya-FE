@@ -8,7 +8,7 @@ export const requestCheer = async () => {
         const response = await instance.post("/cheer");
         return response;
     } catch(error) {
-        if(error.status) {
+        if(error.status === 401 ) {
             alert("로그인 후 이용 가능합니다.");
         }
         const errorCode = error.response.data.code;
