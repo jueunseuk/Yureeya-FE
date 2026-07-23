@@ -5,7 +5,7 @@ import * as BC from "@/common/basic/BasicComponent";
 import upload from "@/assets/icon/gallery/upload.svg";
 import GalleryUpload from "@/components/modal/galleryUpload";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import { useEffect, useState } from "react";
 import { SkeletonItem } from "@/common/skeleton/Skeleton";
 import { formatDate } from "@/util/dateFormatter";
@@ -29,8 +29,8 @@ const GalleryBoard = () => {
         setIsToggleOpen(prev => !prev);
     };
 
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
-    const boardId = 4;
+    const boardInfo = BOARD_BY_PATH[subPath];
+    const boardId = boardInfo.id;
 
     const handleClickSort = (value) => {
         setSearchParams({ page: 1, sort : value });
@@ -130,7 +130,7 @@ const GalleryBoard = () => {
                     {isToggleOpen && (
                         <BC.HorizontalWrapper $jc={"flex-start"} $gap={"7px"} style={{flexWrap: "wrap", padding: "7px 0"}}>
                             {tagData.map((tag) => (
-                                <BC.Text key={tag.tagId} $color={name === null ? "white" : tag.name === name ? "#fff" : "#7A7348"} $size={"13px"} style={{backgroundColor: name === null ? "#C6BC73" : tag.name === name ? "#C6BC73" : "#fff", borderRadius: "5px", padding: "1px 4px", transition: "all 0.2s ease"}}
+                                <BC.Text key={tag.tagId} $color={name === null ? "white" : tag.name === name ? "#fff" : "#7A7348"} $size={"13px"} style={{backgroundColor: name === null ? "#C6BC73" : tag.name === name ? "#C6BC73" : "#fff", borderRadius: "5px", padding: "2px 4px", transition: "all 0.2s ease"}}
                                     onClick={() => handleClickTag(tag.name)}
                                 >#{tag.name}</BC.Text>
                             ))}

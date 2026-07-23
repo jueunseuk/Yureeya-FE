@@ -6,7 +6,7 @@ import bookmark from "@/assets/icon/etc/bookmark.svg";
 import { BOARDS } from "@/constants/boards";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { SERIAL_BOARDS } from "@/constants/serialBoards";
+import { SERIAL_BOARDS } from "@/constants/boardGroup";
 import useUserInfo from "@/hooks/localStorage";
 
 const Board = () => {

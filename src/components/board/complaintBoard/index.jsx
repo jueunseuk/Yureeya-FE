@@ -2,7 +2,7 @@ import * as C from "@/apis/complaint";
 import * as S from "./styles";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import { formatDate } from "@/util/dateFormatter";
 import useUserInfo from "@/hooks/localStorage";
 import ComplaintProcess from "@/components/modal/complaintProcess";
@@ -22,8 +22,8 @@ const ComplaintBoard = () => {
     const [openComplaintUploadModal, setOpenComplaintUploadModal] = useState(false);
     const [status, setStatus] = useState("ALL");
     
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
-    const boardId = 19;
+    const boardInfo = BOARD_BY_PATH[subPath];
+    const boardId = boardInfo.id;
     const sort = "createdAt";
     const size = 100;
     const direction = "DESC";

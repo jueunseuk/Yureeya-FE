@@ -6,7 +6,7 @@ import * as S from "./styles";
 import * as BC from "@/common/basic/BasicComponent";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import useUserInfo from "@/hooks/localStorage";
 import MoreOption from "@/components/modal/moreOption";
 import author from "@/assets/icon/post/author.svg";
@@ -32,7 +32,7 @@ const BasicPost = () => {
     const navigate = useNavigate();
     const { state } = useLocation();
     const {subPath} = useParams();
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
+    const boardInfo = BOARD_BY_PATH[subPath];
     const {postId} = useParams();
     const [alreadyEmpathy, setAlreadyEmpathy] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);
@@ -51,7 +51,6 @@ const BasicPost = () => {
     const [editingContent, setEditingContent] = useState("");
     const [editingLocked, setEditingLocked] = useState(false);
     const [openEmoticonModal, setOpenEmoticonModal] = useState(false);
-    const recommendBoardInfo = BOARD_DESCRIPTIONS[state?.boardName || location];
 
     const handleNavigatePostList = () => {
         navigate(`/${subPath}`);
@@ -129,6 +128,12 @@ const BasicPost = () => {
     };
 
     useEffect(() => {
+        if (!user || !user.userId) {
+            alert("로그인 후 이용가능합니다.");
+            navigate("/");
+            return;
+        }
+
         fetchPost();
         fetchComment();
         fetchFixedComment();
@@ -359,7 +364,7 @@ const BasicPost = () => {
             </S.CommentWrapper>
 
             <BC.VerticalWrapper $ai={"flex-start"}>
-                <BC.Text $size={"15px"} $weight={"600"}><BC.Text $size={"15px"} $weight={"600"} $color={"#C6BC73"} style={{display: "inline"}}>{recommendBoardInfo.label}</BC.Text>의 다른 글</BC.Text>
+                <BC.Text $size={"15px"} $weight={"600"}><BC.Text $size={"15px"} $weight={"600"} $color={"#C6BC73"} style={{display: "inline"}}>{boardInfo.description}</BC.Text>의 다른 글</BC.Text>
                 <S.Table>
                     <colgroup>
                         <col style={{ width: "80px" }} />

@@ -22,7 +22,6 @@ export const Text = styled.div`
 
 export const Table = styled.table`
     width: 100%;
-    min-height: 481px;
     border-collapse: collapse;
     border-top: 2px solid black;
 `;

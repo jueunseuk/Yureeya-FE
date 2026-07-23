@@ -5,7 +5,7 @@ import clock from "@/assets/icon/attendance/clock.svg";
 import pencil from "@/assets/icon/attendance/pencil.svg";
 import refresh from "@/assets/icon/user/refresh.svg";
 import useUserInfo from "@/hooks/localStorage";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import { formatDate } from "@/util/dateFormatter";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -32,8 +32,8 @@ const AttendanceBoard = () => {
     const [attendances, setAttendances] = useState([]);
     const user = useUserInfo();
     
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
-    const boardId = 3;
+    const boardInfo = BOARD_BY_PATH[subPath];
+    const boardId = boardInfo.id;
 
     const now = new Date();
     const day = now.getDay();

@@ -4,7 +4,7 @@ import * as E from "@/apis/event"
 import * as EC from "@/apis/eventComment"
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import MoreOption from "@/components/modal/moreOption";
 import clock from "@/assets/icon/etc/clock.svg";
 import author from "@/assets/icon/post/author.svg";
@@ -27,7 +27,7 @@ const EventPost = () => {
     const user = useUserInfo();
     const navigate = useNavigate();
     const {subPath} = useParams();
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
+    const boardInfo = BOARD_BY_PATH[subPath];
     const {postId} = useParams();
     const [skeleton, setSkeleton] = useState(true);
     const [eventData, setEventData] = useState({});
@@ -45,6 +45,12 @@ const EventPost = () => {
     }
 
     useEffect(() => {
+        if (!user || !user.userId) {
+            alert("로그인 후 이용가능합니다.");
+            navigate("/");
+            return;
+        }
+        
         fetchPost();
         fetchComment();    
     }, []);

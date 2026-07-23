@@ -8,7 +8,7 @@ import UserComments from "@/components/user/UserComments";
 import UserEmpathizedPosts from "@/components/user/UserEmpathizedPosts";
 import UserImages from "@/components/user/UserImages";
 
-const Activity = () => {
+const Activity = ({ userId }) => {
     const {subPath} = useParams();
 
     const getMyComponent = () => {

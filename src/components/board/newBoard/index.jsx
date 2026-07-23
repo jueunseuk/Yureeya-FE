@@ -1,7 +1,7 @@
 import * as P from "@/apis/post";
 import * as S from "./styles";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import { useEffect, useState } from "react";
 import { formatDate } from "@/util/dateFormatter";
 import { getEmpathyColor } from "@/util/empathySelector";
@@ -16,7 +16,8 @@ const NewBoard = () => {
     const [posts, setPosts] = useState([]);
     const navigate = useNavigate();
 
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
+    const boardInfo = BOARD_BY_PATH[subPath];
+    const boardId = boardInfo.id;
 
     const handleClickSort = (value) => {
         setSort(value);

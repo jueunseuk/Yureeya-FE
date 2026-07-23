@@ -3,7 +3,7 @@ import * as BC from "@/common/basic/BasicComponent";
 import * as P from "@/apis/poll";
 import pollIcon from "@/assets/icon/board_sub/notification_poll.svg";
 import { useParams } from "react-router-dom";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import InProgressPoll from "@/components/poll/inProgressPoll";
 import ClosedPoll from "@/components/poll/closedPoll";
 import FinishedPoll from "@/components/poll/finishedPoll";
@@ -17,8 +17,8 @@ const PollBoard = () => {
     const {subPath} = useParams();
     const [openPollUploadModal, setOpenPollUploadModal] = useState(false);
 
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
-    const boardId = 9;
+    const boardInfo = BOARD_BY_PATH[subPath];
+    const boardId = boardInfo.id;
 
     return (
         <S.Wrapper>
