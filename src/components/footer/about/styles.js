@@ -54,7 +54,7 @@ export const Image = styled.img`
 
 export const Introduce = styled.div`
   color: #505050;
-  font-size: 14px;
+  font-size: 15px;
 `;
 
 export const List = styled.ol`

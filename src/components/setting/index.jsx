@@ -26,6 +26,7 @@ const UserSetting = ({user}) => {
                 <S.VerticalWrapper>
                     <S.Text $size={"16px"} $weight={"600"}>즐겨찾기 게시판 설정</S.Text>
                     <S.Text $size={"13px"} style={{marginTop: "5px"}}>자주 이용하는 게시판을 즐겨찾기 목록에 추가할 수 있습니다.</S.Text>
+                    <S.Text $size={"13px"}>설정/해제 후 새로고침하면 반영됩니다.</S.Text>
                 </S.VerticalWrapper>
                 <BoardSetting />
             </S.SettingWrapper>

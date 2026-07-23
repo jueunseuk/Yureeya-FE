@@ -61,12 +61,17 @@ const NicknameSetting = () => {
     return (
         <BC.VerticalWrapper $jc={"space-between"} $ai={"flex-start"} $gap={"15px"} style={{width: "100%", marginTop: "20px"}}>
             <BC.HorizontalWrapper $jc={"flex-start"} $gap={"5px"} style={{flexWrap: "wrap", width: "100%"}}>
-                {colorData.map((item) => (
-                    <ColorItem key={item.shopItemId} onClick={() => setSelectItem(item == selectItem ? null : item)} $border={selectItem?.shopItemId === item.shopItemId ? item.description: ""}>
-                        <BC.Text $size={"14px"} $weight={"600"} $color={item.description}>{item.name}</BC.Text>
-                        <BC.Text $size={"12px"}>{item.description}</BC.Text>
-                    </ColorItem>
-                ))}
+                {
+                    colorData.length > 0 ?
+                    colorData.map((item) => (
+                        <ColorItem key={item.shopItemId} onClick={() => setSelectItem(item == selectItem ? null : item)} $border={selectItem?.shopItemId === item.shopItemId ? item.description: ""}>
+                            <BC.Text $size={"14px"} $weight={"600"} $color={item.description}>{item.name}</BC.Text>
+                            <BC.Text $size={"12px"}>{item.description}</BC.Text>
+                        </ColorItem>
+                    ))
+                    :
+                    <BC.EmptyBox $width="100%" $size="13px">보유한 닉네임 색상이 없습니다.</BC.EmptyBox>
+                }
             </BC.HorizontalWrapper>
             <BC.VerticalWrapper $ai={"flex-end"}>
                 <Button $bg={"#C6BC73"} $color={"white"} onClick={handleUserNicknameColor}>저장하기</Button>
