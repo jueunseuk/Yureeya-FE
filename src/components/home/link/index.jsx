@@ -11,6 +11,7 @@ import cafe from "@/assets/icon/link/cafe.svg";
 import nave2 from "@/assets/icon/link/nave.svg";
 import twitter from "@/assets/icon/link/twitter.svg";
 import namu from "@/assets/icon/link/namu.svg";
+import berriz from "@/assets/icon/link/berriz.svg";
 import { useState } from "react";
 
 const Link = () => {
@@ -86,6 +87,11 @@ const Link = () => {
                                 <S.Icon src={instagram}/>
                                 <S.Link href="https://www.instagram.com/_welcometoforest/" target="_blank" title="유리의 숲 인스타그램 바로가기">
                                     <S.GradientText $size={"15px"} $weight={"600"}>Instagram</S.GradientText></S.Link>
+                            </S.ItemArea>
+                            <S.ItemArea>
+                                <S.Icon src={berriz}/>
+                                <S.Link href="https://berriz.in/ko/choiyuree" target="_blank" title="베리즈 바로가기">
+                                    <S.LinkText $color={"#FF1991"}>Berriz</S.LinkText></S.Link>
                             </S.ItemArea>
                         </S.LinkList>
                     </S.Content>

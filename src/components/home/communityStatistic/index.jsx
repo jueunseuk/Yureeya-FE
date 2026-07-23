@@ -58,22 +58,22 @@ const CommunityStatistic = () => {
                     <BC.Text>{statisticData?.todayComment || 0}</BC.Text>
                 </S.ItemWrapper>
                 <S.ItemWrapper>
-                    <BC.Text>총 갤러리 수</BC.Text>
+                    <BC.Text>총 사진 수</BC.Text>
                     <S.DotLine />
                     <BC.Text>{statisticData?.totalGallery || 0}</BC.Text>
                 </S.ItemWrapper>
                 <S.ItemWrapper>
-                    <BC.Text>오늘 올라온 갤러리 수</BC.Text>
+                    <BC.Text>오늘 올라온 사진 수</BC.Text>
                     <S.DotLine />
                     <BC.Text>{statisticData?.todayGallery || 0}</BC.Text>
                 </S.ItemWrapper>
                 <S.ItemWrapper>
-                    <BC.Text>총 유리 변환 횟수</BC.Text>
+                    <BC.Text>총 공방 제작 횟수</BC.Text>
                     <S.DotLine />
                     <BC.Text>{statisticData?.totalConvert || 0}</BC.Text>
                 </S.ItemWrapper>
                 <S.ItemWrapper>
-                    <BC.Text>오늘 유리 변환된 횟수</BC.Text>
+                    <BC.Text>오늘 공방 제작 횟수</BC.Text>
                     <S.DotLine />
                     <BC.Text>{statisticData?.todayConvert || 0}</BC.Text>
                 </S.ItemWrapper>
