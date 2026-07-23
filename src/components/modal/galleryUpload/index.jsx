@@ -21,6 +21,7 @@ const GalleryUpload = ({onClose}) => {
     const [description, setDescription] = useState("");
     const [date, setDate] = useState(today);
     const [tag, setTag] = useState([]);
+    const [uploadButtonText, setUploadButtonTest] = useState("사진 올리기");
 
     const handleClickFileUpload = () => {
         fileInputRef.current.click();
@@ -63,6 +64,7 @@ const GalleryUpload = ({onClose}) => {
 
     const requestGalleryUpload = async () => {
         try {
+            setUploadButtonTest("업로드 중");
             const formData = new FormData();
             formData.append("title", title);
             formData.append("description", description);
@@ -80,7 +82,9 @@ const GalleryUpload = ({onClose}) => {
             });
 
             await G.getGalleryUpload(formData);
-
+            
+            setUploadButtonTest("업로드 완료");
+            alert("업로드 성공!");
             window.location.reload();
         } catch(error) {
 
@@ -170,7 +174,7 @@ const GalleryUpload = ({onClose}) => {
                         description.length < 10 ||
                         date.length === 0}
                         onClick={requestGalleryUpload}
-                    >사진 업로드</S.SubmitButton>
+                    >{uploadButtonText}</S.SubmitButton>
                 </S.Content>
             </S.Wrapper>
         </>
