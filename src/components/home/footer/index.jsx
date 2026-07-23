@@ -44,7 +44,7 @@ const Footer = () => {
                 </S.VerticalWrapper>
                 <S.VerticalWrapper style={{alignItems: "center"}}>
                     <BC.Icon src={favicon} $w={"120px"} />
-                    <BC.Text $size={"16px"} $weight={"600"} $color={"#BAA644"}>CYR Community</BC.Text>
+                    <BC.Text $size={"18px"} $weight={"600"} $color={"#BAA644"} style={{marginTop: "5px"}}>Yureeya</BC.Text>
                 </S.VerticalWrapper>
             </S.Wrapper>
         </>
