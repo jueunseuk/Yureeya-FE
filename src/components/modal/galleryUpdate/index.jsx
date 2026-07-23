@@ -19,6 +19,7 @@ const GalleryUpdate = ({onClose, prevData}) => {
     const [tag, setTag] = useState(prevData?.tags || []);
     const [description, setDescription] = useState(prevData?.description || "");
     const [date, setDate] = useState(prevData?.picturedAt.split("T")[0] || "");
+    const [uploadButtonText, setUploadButtonTest] = useState("수정하기");
 
     const handleClickFileUpload = () => {
         fileInputRef.current.click();
@@ -68,6 +69,7 @@ const GalleryUpdate = ({onClose, prevData}) => {
 
     const requestGalleryUpdate = async () => {
         try {
+            setUploadButtonTest("수정 중");
             const formData = new FormData();
             formData.append("title", title);
             formData.append("description", description);
@@ -89,6 +91,8 @@ const GalleryUpdate = ({onClose, prevData}) => {
             });
 
             await G.getGalleryUpdate(prevData.galleryId, formData);
+            setUploadButtonTest("수정 완료");
+            alert("갤러리 수정 성공!");
 
             window.location.reload();
         } catch(error) {
@@ -180,7 +184,7 @@ const GalleryUpdate = ({onClose, prevData}) => {
                         description.length < 10 ||
                         date.length === 0}
                         onClick={requestGalleryUpdate}
-                    >수정하기</S.SubmitButton>
+                    >{uploadButtonText}</S.SubmitButton>
                 </S.Content>
             </S.Wrapper>
         </>
