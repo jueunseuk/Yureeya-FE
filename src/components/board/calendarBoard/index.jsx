@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import { useParams } from "react-router-dom";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import { useState } from "react";
 import CalendarComponent from "@/components/calendar/calendarComponent";
 import CalendarRequest from "@/components/calendar/calendarRequest";
@@ -16,8 +16,8 @@ const CalendarBoard = () => {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const {subPath} = useParams();
 
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
-    const boardId = 7;
+    const boardInfo = BOARD_BY_PATH[subPath];
+    const boardId = boardInfo.id;
 
     const handleOpenModal = () => {
         setIsModalOpen(true);

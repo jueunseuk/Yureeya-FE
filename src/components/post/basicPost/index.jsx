@@ -6,7 +6,7 @@ import * as S from "./styles";
 import * as BC from "@/common/basic/BasicComponent";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import useUserInfo from "@/hooks/localStorage";
 import MoreOption from "@/components/modal/moreOption";
 import author from "@/assets/icon/post/author.svg";
@@ -32,7 +32,7 @@ const BasicPost = () => {
     const navigate = useNavigate();
     const { state } = useLocation();
     const {subPath} = useParams();
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
+    const boardInfo = BOARD_BY_PATH[subPath];
     const {postId} = useParams();
     const [alreadyEmpathy, setAlreadyEmpathy] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);

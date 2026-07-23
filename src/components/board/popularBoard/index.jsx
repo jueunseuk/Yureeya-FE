@@ -2,7 +2,7 @@ import * as P from "@/apis/post";
 import * as S from "./styles";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import { formatDate, toJavaLocalDateTime } from "@/util/dateFormatter";
 import { getEmpathyColor } from "@/util/empathySelector";
 
@@ -17,7 +17,8 @@ const PopularBoard = () => {
     const navigate = useNavigate();
     const sort = "empathyCnt";
 
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
+    const boardInfo = BOARD_BY_PATH[subPath];
+    const boardId = boardInfo.id;
 
     const handleClickPeriod = (value) => {
         setPeriod(value);

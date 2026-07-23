@@ -2,7 +2,7 @@ import * as A from "@/apis/announcement"
 import * as S from "./styles";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import MoreOption from "@/components/modal/moreOption";
 import author from "@/assets/icon/post/author.svg";
 import ellipse from "@/assets/icon/post/ellipse.svg";
@@ -19,7 +19,7 @@ const AnnouncementPost = () => {
     const user = useUserInfo();
     const navigate = useNavigate();
     const {subPath} = useParams();
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
+    const boardInfo = BOARD_BY_PATH[subPath];
     const {postId} = useParams();
     const [skeleton, setSkeleton] = useState(true);
     const [announcementData, setAnnouncementData] = useState({});

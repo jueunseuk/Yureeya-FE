@@ -2,7 +2,7 @@ import * as S from "./styles";
 import * as E from "@/apis/event";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BOARD_DESCRIPTIONS } from "@/constants/boardsDesc";
+import { BOARD_BY_PATH } from "@/constants/boardGroup";
 import { formatDate } from "@/util/dateFormatter";
 
 const EventBoard = () => {
@@ -14,8 +14,8 @@ const EventBoard = () => {
     const [eventData, setEventData] = useState([]);
     const navigate = useNavigate();
     
-    const boardInfo = BOARD_DESCRIPTIONS[subPath];
-    const boardId = 6;
+    const boardInfo = BOARD_BY_PATH[subPath];
+    const boardId = boardInfo.id;
     const size = 20;
     const sort = "createdAt";
     const direction = "DESC";
