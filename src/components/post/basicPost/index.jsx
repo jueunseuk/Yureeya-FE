@@ -51,7 +51,6 @@ const BasicPost = () => {
     const [editingContent, setEditingContent] = useState("");
     const [editingLocked, setEditingLocked] = useState(false);
     const [openEmoticonModal, setOpenEmoticonModal] = useState(false);
-    const recommendBoardInfo = BOARD_DESCRIPTIONS[state?.boardName || location];
 
     const handleNavigatePostList = () => {
         navigate(`/${subPath}`);
@@ -129,6 +128,12 @@ const BasicPost = () => {
     };
 
     useEffect(() => {
+        if (!user || !user.userId) {
+            alert("로그인 후 이용가능합니다.");
+            navigate("/");
+            return;
+        }
+
         fetchPost();
         fetchComment();
         fetchFixedComment();
@@ -359,7 +364,7 @@ const BasicPost = () => {
             </S.CommentWrapper>
 
             <BC.VerticalWrapper $ai={"flex-start"}>
-                <BC.Text $size={"15px"} $weight={"600"}><BC.Text $size={"15px"} $weight={"600"} $color={"#C6BC73"} style={{display: "inline"}}>{recommendBoardInfo.label}</BC.Text>의 다른 글</BC.Text>
+                <BC.Text $size={"15px"} $weight={"600"}><BC.Text $size={"15px"} $weight={"600"} $color={"#C6BC73"} style={{display: "inline"}}>{boardInfo.description}</BC.Text>의 다른 글</BC.Text>
                 <S.Table>
                     <colgroup>
                         <col style={{ width: "80px" }} />

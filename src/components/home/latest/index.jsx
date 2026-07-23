@@ -41,7 +41,7 @@ const LatestPost = () => {
             <S.Wrapper>
                 <S.TitleArea>
                     <S.Text $size={"16px"} $weight={"600"}>최신글</S.Text>
-                    <S.Text $size={"12px"} style={{cursor: "pointer"}}>더보기</S.Text>
+                    <S.Text $size={"12px"} style={{cursor: "pointer"}} onClick={() => navigate("/new")}>더보기</S.Text>
                 </S.TitleArea>
                     <S.Table>
                         <colgroup>

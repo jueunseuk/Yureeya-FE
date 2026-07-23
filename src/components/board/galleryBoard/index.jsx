@@ -130,7 +130,7 @@ const GalleryBoard = () => {
                     {isToggleOpen && (
                         <BC.HorizontalWrapper $jc={"flex-start"} $gap={"7px"} style={{flexWrap: "wrap", padding: "7px 0"}}>
                             {tagData.map((tag) => (
-                                <BC.Text key={tag.tagId} $color={name === null ? "white" : tag.name === name ? "#fff" : "#7A7348"} $size={"13px"} style={{backgroundColor: name === null ? "#C6BC73" : tag.name === name ? "#C6BC73" : "#fff", borderRadius: "5px", padding: "1px 4px", transition: "all 0.2s ease"}}
+                                <BC.Text key={tag.tagId} $color={name === null ? "white" : tag.name === name ? "#fff" : "#7A7348"} $size={"13px"} style={{backgroundColor: name === null ? "#C6BC73" : tag.name === name ? "#C6BC73" : "#fff", borderRadius: "5px", padding: "2px 4px", transition: "all 0.2s ease"}}
                                     onClick={() => handleClickTag(tag.name)}
                                 >#{tag.name}</BC.Text>
                             ))}

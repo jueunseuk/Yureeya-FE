@@ -30,6 +30,12 @@ const AnnouncementPost = () => {
     }
 
     useEffect(() => {
+        if (!user || !user.userId) {
+            alert("로그인 후 이용가능합니다.");
+            navigate("/");
+            return;
+        }
+        
         const fetchPost = async () => {
             try {
                 setSkeleton(true);
