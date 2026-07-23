@@ -177,7 +177,7 @@ const Guide = () => {
                             <S.ThirdListItem>- 총 응원: 지금까지 가장 많은 응원을 보낸 사용자의 순위입니다.</S.ThirdListItem>
                             <S.ThirdListItem>- 일일 응원: 하루에 가장 많은 응원을 보낸 사용자의 순위입니다.</S.ThirdListItem>
                             <S.ThirdListItem>- 유리 조각: 유리 조각을 가장 많이 제작한 사용자의 순위입니다.</S.ThirdListItem>
-                    <S.FirstListItem id="shop">o. 율크박스(개발 예정)</S.FirstListItem>
+                    <S.FirstListItem id="shop">o. 유리노트(개발 예정)</S.FirstListItem>
                         <S.SecondListItem>가수 최유리의 발매된 음악을 Spotify 서비스와 연계하여 조회 및 감상할 수 있습니다.</S.SecondListItem>
                 </S.List>
                 <S.Blank />

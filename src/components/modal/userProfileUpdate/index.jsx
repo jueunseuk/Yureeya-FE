@@ -27,6 +27,20 @@ const UserProfileUpdateModal = ({onClose, user}) => {
         setUserProfileRevisoin(file);
     };
 
+    const handleClickRandom = async () => {
+        try {
+            const profileResponse = await U.patchUserProfileRandom();
+
+            localStorage.setItem("userInfo", JSON.stringify({
+                ...prevUser,
+                profileUrl: profileResponse?.data
+            }));
+            alert("변경 완료!\n페이지가 새로고침 됩니다.");
+            window.location.reload();
+        } catch (error) {
+        }
+    };
+
     const handleImageChange = (event) => {
         const file = event.target.files[0];
 
@@ -82,6 +96,9 @@ const UserProfileUpdateModal = ({onClose, user}) => {
                         <BC.Text $size={"12px"} $color={"#878787"} style={{cursor: "pointer", width: "150px", textAlign: "center"}}
                             onClick={handleClickDefault}
                         >기본으로 설정</BC.Text>
+                        <BC.Text $size={"12px"} $color={"#878787"} style={{cursor: "pointer", width: "150px", textAlign: "center"}}
+                            onClick={handleClickRandom}
+                        >랜덤으로 설정</BC.Text>
                         <S.FileInput type="file" accept="image/png, image/jpg, image/jpeg" ref={fileInputRef} onChange={handleImageChange}/>
                     </S.VerticalWrapper>
                     <S.VerticalWrapper $ai={"flex-start"} $gap={"5px"}>

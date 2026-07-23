@@ -64,6 +64,17 @@ export const patchUserProfile = async (formData) => {
     }
 };
 
+export const patchUserProfileRandom = async () => {
+    try {
+        const response = await instance.patch(`/user/me/profile/random`);
+        return response;
+    } catch(error) {
+        const errorCode = error.response.code;
+
+        throw error;
+    }
+};
+
 export const getUserActivityData = async (userId) => {
     try {
         const response = await instance.get(`/user/${userId}/activity`);
