@@ -10,6 +10,7 @@ import RankingSummary from "@/components/home/ranking";
 import InProgressPoll from "@/components/poll/inProgressPoll";
 import YoutubeComponent from "@/components/home/youtube";
 import LoudSpeakerPost from "@/components/home/loudSpeaker";
+import UnresolvedQna from "@/components/home/qna"
 
 const Home = () => {
     const user = useUserInfo();
@@ -24,6 +25,7 @@ const Home = () => {
             </BC.HorizontalWrapper>
             <LoudSpeakerPost />
             <LatestPost />
+            <UnresolvedQna />
             <GallerySummary />
             {(user && user.userId) && <InProgressPoll />}
             <RankingSummary />
