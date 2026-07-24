@@ -45,10 +45,10 @@ const Guide = () => {
                         <S.SecondListItem>답변 채택과 모래알 지급은 취소할 수 없으므로 신중하게 선택해 주세요.</S.SecondListItem>
                         <S.SecondListItem>답변을 채택하지 않더라도 모래알은 회수할 수 없습니다.</S.SecondListItem>
                         <S.SecondListItem><S.Link href="https://cyr-community.vercel.app/faq" style={{fontWeight: "600"}}>FAQ</S.Link>에서 자주 묻는 질문을 확인할 수 있습니다.</S.SecondListItem>
-                    <S.FirstListItem>g. 내가 그린 유리(업데이트 예정)</S.FirstListItem>
+                    <S.FirstListItem>g. 내가 그린 유리(개발 예정)</S.FirstListItem>
                         <S.SecondListItem>커뮤니티 사용자가 직접 제작한 팬아트를 자유롭게 공유하는 게시판입니다.</S.SecondListItem>
                         <S.SecondListItem>타인의 작품을 무단 도용하거나 재업로드하는 행위는 엄격히 금지됩니다.</S.SecondListItem>
-                    <S.FirstListItem>h. 내가 부른 유리(업데이트 예정)</S.FirstListItem>
+                    <S.FirstListItem>h. 내가 부른 유리(개발 예정)</S.FirstListItem>
                         <S.SecondListItem>커뮤니티 사용자가 직접 부른 가수 최유리의 노래 커버 컨텐츠를 공유할 수 있는 게시판입니다.</S.SecondListItem>
                         <S.SecondListItem>타인의 콘텐츠를 무단으로 게시하거나 저작권을 침해하는 콘텐츠는 금지됩니다.</S.SecondListItem>
                     <S.FirstListItem>i. To. 유리</S.FirstListItem>

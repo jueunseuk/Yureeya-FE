@@ -364,7 +364,7 @@ const BasicPost = () => {
             </S.CommentWrapper>
 
             <BC.VerticalWrapper $ai={"flex-start"}>
-                <BC.Text $size={"15px"} $weight={"600"}><BC.Text $size={"15px"} $weight={"600"} $color={"#C6BC73"} style={{display: "inline"}}>{boardInfo.description}</BC.Text>의 다른 글</BC.Text>
+                <BC.Text $size={"15px"} $weight={"600"}><BC.Text $size={"15px"} $weight={"600"} $color={"#C6BC73"} style={{display: "inline"}}>{boardInfo.label}</BC.Text>의 다른 글</BC.Text>
                 <S.Table>
                     <colgroup>
                         <col style={{ width: "80px" }} />
