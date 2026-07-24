@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     padding: 50px 0;
-    gap: 180px;
+    gap: 100px;
     background:
         linear-gradient(#f3e6c6, #e9dab3),
         radial-gradient(circle at 30% 40%, #c8b37a33 0 2px, transparent 2px 8px),

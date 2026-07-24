@@ -5,6 +5,7 @@ import Policy from "@/components/footer/policy";
 import Guide from "@/components/footer/guide";
 import About from "@/components/footer/about";
 import Disclaimer from "@/components/footer/disclaimer";
+import FAQ from "@/components/footer/faq";
 
 const FooterPage = () => {
     const location = useLocation().pathname;
@@ -16,6 +17,7 @@ const FooterPage = () => {
             case "/guide": return <Guide />;
             case "/disclaimer": return <Disclaimer />;
             case "/about": return <About />;
+            case "/faq": return <FAQ />;
             default : return <WrongPage />;
         }
     };

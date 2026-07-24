@@ -1,13 +1,6 @@
 import * as S from "./styles";
-import { useState } from "react";
 
 const Guide = () => {
-    const [isToggle, setIsToggle] = useState(false);
-
-    const handleToggle = () => {
-        if(isToggle) setIsToggle(false);
-        else setIsToggle(true);
-    }
 
     return (
         <>
@@ -43,11 +36,15 @@ const Guide = () => {
                     <S.FirstListItem>e. 자유게시판</S.FirstListItem>
                         <S.SecondListItem>자유로운 주제로 이용자 간 다양한 소통을 할 수 있는 공간입니다.</S.SecondListItem>
                         <S.SecondListItem>정치, 종교 등 민감한 주제의 게시글 및 악의적이거나 공격적인 글은 제한됩니다.</S.SecondListItem>
-                    <S.FirstListItem>f. 질문게시판(업데이트 예정)</S.FirstListItem>
+                    <S.FirstListItem>f. 질문게시판</S.FirstListItem>
                         <S.SecondListItem>커뮤니티 및 아티스트 관련 궁금한 사항을 질문하고 답변 받을 수 있는 게시판입니다.</S.SecondListItem>
-                        <S.SecondListItem>가수 최유리에 관한 기본적인 질문은 AI 율랑이에게 물어보거나 율무위키를 참고하면 빠르게 답을 얻을 수 있습니다.</S.SecondListItem>
-                        <S.SecondListItem>질문 시 명확한 제목과 상세한 내용을 기재하면 빠르고 정확한 답변을 받을 수 있습니다.</S.SecondListItem>
-                        <S.SecondListItem>FAQ에서 자주 묻는 질문을 확인할 수 있습니다.</S.SecondListItem>
+                        <S.SecondListItem>질문 작성 시 보상으로 본인이 보유한 모래알을 1개부터 100개까지 걸 수 있습니다.</S.SecondListItem>
+                        <S.SecondListItem>답변을 채택하면 등록한 모래알에서 수수료 10%를 제외한 금액이 답변 작성자에게 지급됩니다.</S.SecondListItem>
+                        <S.ThirdListItem>- 질문게시판이 사용자 간 모래알 전달 수단으로 악용되는 것을 방지</S.ThirdListItem>
+                        <S.ThirdListItem>- 10%를 제외한 뒤 소수점 절사</S.ThirdListItem>
+                        <S.SecondListItem>답변 채택과 모래알 지급은 취소할 수 없으므로 신중하게 선택해 주세요.</S.SecondListItem>
+                        <S.SecondListItem>답변을 채택하지 않더라도 모래알은 회수할 수 없습니다.</S.SecondListItem>
+                        <S.SecondListItem><S.Link href="https://cyr-community.vercel.app/faq" style={{fontWeight: "600"}}>FAQ</S.Link>에서 자주 묻는 질문을 확인할 수 있습니다.</S.SecondListItem>
                     <S.FirstListItem>g. 내가 그린 유리(업데이트 예정)</S.FirstListItem>
                         <S.SecondListItem>커뮤니티 사용자가 직접 제작한 팬아트를 자유롭게 공유하는 게시판입니다.</S.SecondListItem>
                         <S.SecondListItem>타인의 작품을 무단 도용하거나 재업로드하는 행위는 엄격히 금지됩니다.</S.SecondListItem>
@@ -197,7 +194,7 @@ const Guide = () => {
                             <S.Row>
                                 <S.Column>게시글 작성</S.Column>
                                 <S.Column>+10</S.Column>
-                                <S.Column>게시판에 관계없이</S.Column>
+                                <S.Column>모래 이야기 및 유리 이야기</S.Column>
                             </S.Row>
                             <S.Row>
                                 <S.Column>댓글</S.Column>
@@ -239,6 +236,11 @@ const Guide = () => {
                                 <S.Column>+5</S.Column>
                                 <S.Column>업적당 한 번</S.Column>
                             </S.Row>
+                            <S.Row>
+                                <S.Column>답변 작성</S.Column>
+                                <S.Column>+3</S.Column>
+                                <S.Column>질문 게시글 내</S.Column>
+                            </S.Row>
                         </tbody>
                     </S.Table>
                     <S.FirstListItem id="sand">b. 모래알</S.FirstListItem>
@@ -254,11 +256,6 @@ const Guide = () => {
                             <S.Row>
                                 <S.Column rowSpan={9}>게시글 작성</S.Column>
                                 <S.Column>자유게시판</S.Column>
-                                <S.Column>+1</S.Column>
-                                <S.Column>-</S.Column>
-                            </S.Row>
-                            <S.Row>
-                                <S.Column>질문게시판</S.Column>
                                 <S.Column>+1</S.Column>
                                 <S.Column>-</S.Column>
                             </S.Row>
@@ -296,6 +293,16 @@ const Guide = () => {
                                 <S.Column>굿즈 후기</S.Column>
                                 <S.Column>+1</S.Column>
                                 <S.Column>-</S.Column>
+                            </S.Row>
+                            <S.Row>
+                                <S.Column>건의하기</S.Column>
+                                <S.Column>+1</S.Column>
+                                <S.Column>-</S.Column>
+                            </S.Row>
+                            <S.Row>
+                                <S.Column colSpan={2}>질문게시판에 답변 작성</S.Column>
+                                <S.Column>+1</S.Column>
+                                <S.Column>한 게시글 당 최대 1개(본인 질문 X)</S.Column>
                             </S.Row>
                             <S.Row>
                                 <S.Column colSpan={2}>댓글</S.Column>
@@ -392,12 +399,12 @@ const Guide = () => {
                             </S.Row>
                         </tbody>
                     </S.Table>
-                    <S.SecondListItem>ex) 만약 11월 01이 마지막 출석인 경우</S.SecondListItem>
-                        <S.ThirdListItem>- 11.02에 출석하면 +100℃</S.ThirdListItem>
-                        <S.ThirdListItem>- 11.03에 출석하면 +50℃</S.ThirdListItem>
-                        <S.ThirdListItem>- 11.04에 출석하면 +50℃</S.ThirdListItem>
-                        <S.ThirdListItem>- 11.05에 출석하면 -50℃</S.ThirdListItem>
-                        <S.ThirdListItem>- 12.01에 출석하면 0℃으로 초기화</S.ThirdListItem>
+                    <S.SecondListItem>ex) 만약 11월 1일이 마지막 출석인 경우</S.SecondListItem>
+                        <S.ThirdListItem>- 11.2에 출석하면 +100℃</S.ThirdListItem>
+                        <S.ThirdListItem>- 11.3에 출석하면 +50℃</S.ThirdListItem>
+                        <S.ThirdListItem>- 11.4에 출석하면 +50℃</S.ThirdListItem>
+                        <S.ThirdListItem>- 11.5에 출석하면 -50℃</S.ThirdListItem>
+                        <S.ThirdListItem>- 12.1에 출석하면 0℃으로 초기화</S.ThirdListItem>
                 </S.List>
                 <S.Blank />
             </S.Wrapper>

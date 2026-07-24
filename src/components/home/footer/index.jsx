@@ -28,17 +28,20 @@ const Footer = () => {
                     <S.Text onClick={() => handleNavigate("terms")}>서비스 이용약관</S.Text>
                     <S.Text onClick={() => handleNavigate("policy")}>개인정보 보호정책</S.Text>
                     <S.Text onClick={() => handleNavigate("disclaimer")}>책임의 한계 및 법적 고지</S.Text>
+                </S.VerticalWrapper>
+                <S.VerticalWrapper $gap={"2px"} $ai={"flex-start"}>
+                    <BC.Text $size={"16px"} $weight={"700"} style={{margin: "5px 0 10px 0", borderBottom: "2px solid black"}}>SUPPORT</BC.Text>
                     <S.Text onClick={() => handleNavigate("guide")}>커뮤니티 이용가이드</S.Text>
-                    <S.Text onClick={() => handleNavigate("about")}>About</S.Text>
+                    <S.Text onClick={() => handleNavigate("faq")}>FAQ</S.Text>
+                    <S.Text onClick={() => handleNavigate("suggestion")}>건의하기</S.Text>
+                    <S.Text onClick={() => handleNavigate("complaint")}>신고하기</S.Text>
                 </S.VerticalWrapper>
                 <S.VerticalWrapper $gap={"2px"} $ai={"flex-start"}>
-                    <BC.Text $size={"16px"} $weight={"700"} style={{margin: "5px 0 10px 0", borderBottom: "2px solid black"}}>CONTACT</BC.Text>
-                    <BC.Text>Name : 윤준수</BC.Text>
+                    <BC.Text $size={"16px"} $weight={"700"} style={{margin: "5px 0 10px 0", borderBottom: "2px solid black"}}>ABOUT</BC.Text>
+                    <BC.Text>Name : 윤준수(Junsu Yun)</BC.Text>
                     <BC.Text>Email : junsu120202@gmail.com</BC.Text>
-                    <BC.Text>Tel : 010-6558-4431</BC.Text>
-                </S.VerticalWrapper>
-                <S.VerticalWrapper $gap={"2px"} $ai={"flex-start"}>
-                    <BC.Text $size={"16px"} $weight={"700"} style={{margin: "5px 0 10px 0", borderBottom: "2px solid black"}}>CREATOR</BC.Text>
+                    <BC.Text style={{marginBottom: "5px"}}>Tel : 010-6558-4431</BC.Text>
+                    <S.Text onClick={() => handleNavigate("about")}>About</S.Text>
                     <S.LinkText href="https://jundyu.tistory.com/" target="_blank">Blog</S.LinkText>
                     <S.LinkText href="https://github.com/jueunseuk" target="_blank">Github</S.LinkText>
                 </S.VerticalWrapper>
