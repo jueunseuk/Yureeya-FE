@@ -41,6 +41,7 @@ export const FirstColumn = styled.td`
 
 export const Column = styled.td`
     padding: 8px;
+    font-size: 13px;
     text-align: ${({$align}) => $align || "center"};
 `;
 

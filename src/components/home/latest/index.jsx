@@ -45,11 +45,11 @@ const LatestPost = () => {
                 </S.TitleArea>
                     <S.Table>
                         <colgroup>
-                            <col style={{ width: "15%" }} />
-                            <col style={{ width: "51%" }} />
-                            <col style={{ width: "12%" }} />
-                            <col style={{ width: "12%" }} />
-                            <col style={{ width: "10%" }} />
+                            <col style={{width: "15%"}}/>
+                            <col style={{width: "41%"}}/>
+                            <col style={{width: "12%"}}/>
+                            <col style={{width: "12%"}}/>
+                            <col style={{width: "15%"}}/>
                         </colgroup>
                         <tbody>
                             {skeleton ?

@@ -49,11 +49,10 @@ const UnresolvedQna = () => {
                 :
                 <S.Table>
                     <colgroup>
-                        <col style={{width: "5%"}}/>
-                        <col style={{width: "10%"}}/>
-                        <col style={{width: "40%"}}/>
-                        <col style={{width: "10%"}}/>
-                        <col style={{width: "10%"}}/>
+                        <col style={{width: "15%"}}/>
+                        <col style={{width: "41%"}}/>
+                        <col style={{width: "12%"}}/>
+                        <col style={{width: "12%"}}/>
                         <col style={{width: "15%"}}/>
                     </colgroup>
                     <tbody>
@@ -61,7 +60,6 @@ const UnresolvedQna = () => {
                             Array.from({length: 5}).map((_, index) => (
                                 <S.Row key={index}>
                                     <S.FirstColumn><SkeletonItem $width="100%" $height="15px" $radius={"5px"}/></S.FirstColumn>
-                                    <S.Column><SkeletonItem $width="100%" $height="15px" $radius={"5px"}/></S.Column>
                                     <S.Column><SkeletonItem $width="100%" $height="15px" $radius={"5px"}/></S.Column>
                                     <S.Column><SkeletonItem $width="100%" $height="15px" $radius={"5px"}/></S.Column>
                                     <S.Column><SkeletonItem $width="100%" $height="15px" $radius={"5px"}/></S.Column>
@@ -79,9 +77,8 @@ const UnresolvedQna = () => {
                                 questions.slice(0, 5).map((question) => (
                                     <S.Row key={question.questionId}>
                                         <S.FirstColumn>
-                                            <S.Text style={{cursor: "pointer"}}>[질문]</S.Text>
+                                            <S.Text style={{cursor: "pointer"}}>[질문게시판]</S.Text>
                                         </S.FirstColumn>
-                                        <S.Column>{question.sandCnt}</S.Column>
                                         <S.Column $align={"left"} style={{cursor: "pointer"}} onClick={() => navigate("/qna")}>{question.title}</S.Column>
                                         <S.Column $align={"left"} $size={"12px"} onClick={() => navigate(`/users/${question.user.userId}`)} style={{cursor: "pointer"}}>{question.user.nickname}</S.Column>
                                         <S.Column $color={"#878787"} $size={"12px"}>{formatDate(question.createdAt, 3)}</S.Column>
