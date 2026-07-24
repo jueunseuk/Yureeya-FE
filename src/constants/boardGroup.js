@@ -96,7 +96,7 @@ export const BOARD_GROUPS = [
         id: 10,
         path: "qna",
         label: "질문게시판",
-        description: "궁금한 게 있다면 이곳에 남겨주세요! 다른 모래들이 친절하게 답해줄 거예요.",
+        description: "궁금한 게 있다면 이곳에 남겨주세요! 다른 모래들이 친절하게 답해줄 거예요. 질문하기 전 아래의 자주 묻는 질문(FAQ)을 참고해주세요.",
       },
       {
         id: 11,
