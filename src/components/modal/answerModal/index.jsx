@@ -137,7 +137,6 @@ const AnswerModal = ({onClose, question}) => {
                             </S.HorizontalWrapper>
                         </S.AnswerUploadArea>
                     }
-                    <S.Button $bg={"#BBBBBB"} onClick={onClose}>닫기</S.Button>
                 </S.Content>
             }
         </S.Wrapper>
