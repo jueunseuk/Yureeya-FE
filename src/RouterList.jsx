@@ -184,6 +184,10 @@ export const RouterList = () => [
                         element: <FooterPage />
                     },
                     {
+                        path: "faq",
+                        element: <FooterPage />
+                    },
+                    {
                         path: "policy",
                         element: <FooterPage />
                     },
